@@ -1,0 +1,19 @@
+{
+	"name": "Plex Now Playing",
+	"short_name": "Plex Now Playing",
+	"description": "A web app that display information about the currently playing item from a Plex server",
+	"icons": [
+		{
+			"src": "/icon-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "/icon-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	],
+	"theme_color": "#333",
+	"background_color": "#333"
+}
