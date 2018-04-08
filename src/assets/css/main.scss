@@ -115,7 +115,14 @@ img[src] {
 	align-items: center; /* align vertical */
 
 	img {
-		max-height: 100%;
+		height: 100%;
+	}
+
+	@media screen and (min-device-aspect-ratio: 16/9) {
+		img {
+			width: 100%;
+			height: inherit;
+		}
 	}
 }
 
