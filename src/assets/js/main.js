@@ -39,8 +39,9 @@ window.addEventListener('load', function() {
 	plexSettingsForm.addEventListener('submit', plexSettingsFormSubmit);
 
 
-	const plexURL = `https://crossorigin.me/http://${plexIP}:${plexPort}`;
-	const plexURLToken = `${plexURL}/status/sessions?X-Plex-Token=${plexToken}`;
+	const proxyURL = 'https://cors-anywhere.herokuapp.com/';
+	const plexURL = `http://${plexIP}:${plexPort}`;
+	const plexURLToken = `${proxyURL}${plexURL}/status/sessions?X-Plex-Token=${plexToken}`;
 
 	function plexDisplay(data) {
 		// console.log(data);
