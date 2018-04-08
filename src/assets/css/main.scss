@@ -113,6 +113,10 @@ img[src] {
 	display: flex;
 	justify-content: center; /* align horizontal */
 	align-items: center; /* align vertical */
+
+	img {
+		max-height: 100%;
+	}
 }
 
 .plex-meta {
