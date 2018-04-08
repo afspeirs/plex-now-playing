@@ -43,7 +43,7 @@ window.addEventListener('load', function() {
 	const plexURLToken = `https://crossorigin.me/${plexURL}/status/sessions?X-Plex-Token=${plexToken}`;
 
 	function plexDisplay(data) {
-		console.log(data);
+		// console.log(data);
 
 		const size = data.elements[0].attributes.size;
 		// console.log(size);
@@ -54,15 +54,13 @@ window.addEventListener('load', function() {
 			const elements = data.elements[0].elements[0];
 			// console.log(elements);
 
-			// const name = elements.name;
-			// console.log(name);
-
 			const attributes = elements.attributes;
 			// console.log(attributes);
 
 			const art = attributes.art;
+			// const art = attributes.grandparentThumb;
 			// const art = attributes.thumb;
-			// const art = attributes.parentThumb;
+			// 1516659562const art = attributes.parentThumb;
 			// console.log(art);
 			plexArt.src = `${plexURL}${art}?X-Plex-Token=${plexToken}`;
 
@@ -72,11 +70,15 @@ window.addEventListener('load', function() {
 
 			const grandparentTitle = attributes.grandparentTitle;
 			// console.log(grandparentTitle);
-			plexGrandparentTitle.innerHTML = grandparentTitle;
+			if (grandparentTitle) {
+				plexGrandparentTitle.innerHTML = grandparentTitle;
+			}
 
-			const rating = attributes.rating;
+			const rating = attributes.contentRating;
 			// console.log(rating);
-			plexRating.innerHTML = `${rating}/10`;
+			if (rating) {
+				plexRating.innerHTML = `${rating}`;
+			}
 		} else {
 			plexGrandparentTitle.innerHTML = 'Nothing Playing';
 		}
@@ -100,5 +102,6 @@ window.addEventListener('load', function() {
 		)
 		.catch(function(err) {
 			console.log('Fetch Error', err);
+			plexGrandparentTitle.innerHTML = 'Fetch Error', err;
 		});
 });
