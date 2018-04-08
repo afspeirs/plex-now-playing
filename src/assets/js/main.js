@@ -39,7 +39,7 @@ window.addEventListener('load', function() {
 	plexSettingsForm.addEventListener('submit', plexSettingsFormSubmit);
 
 
-	const plexURL = `https://${plexIP}:${plexPort}`;
+	const plexURL = `http://${plexIP}:${plexPort}`;
 	const plexURLToken = `${plexURL}/status/sessions?X-Plex-Token=${plexToken}`;
 
 	function plexDisplay(data) {
