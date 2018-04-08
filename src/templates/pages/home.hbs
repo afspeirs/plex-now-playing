@@ -1,0 +1,34 @@
+<div class="plex-settings-toggle">
+	{{> svg-settings}}
+</div>
+<div class="plex-settings-container">
+	<form id="plex-settings-form">
+		<ul>
+			<li>
+				<label for="plex-settings-ip">Plex IP</label>
+				<input type="text" id="plex-settings-ip" placeholder="Enter your IP">
+			</li>
+			<li>
+				<label for="plex-settings-port">Plex Port</label>
+				<input type="text" id="plex-settings-port" placeholder="Enter your port">
+			</li>
+			<li>
+				<label for="plex-settings-token">Plex Token</label>
+				<input type="text" id="plex-settings-token" placeholder="Enter your token">
+			</li>
+			<li>
+				<button type="submit">Update</button>
+			</li>
+		</ul>
+	</form>
+</div>
+
+<div class="plex-art-container">
+	<img id="plex-art" alt="plex artwork">
+</div>
+
+<div class="plex-meta">
+	<p id="plex-title"></p>
+	<p id="plex-grandparent-title"></p>
+	<p id="plex-rating"></p>
+</div>
