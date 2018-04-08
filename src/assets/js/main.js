@@ -6,8 +6,8 @@ window.addEventListener('load', function() {
 	const plexTitle = document.querySelector('#plex-title');
 	const plexRating = document.querySelector('#plex-rating');
 
-	const plexIP = localStorage.getItem('plex-settings-ip') || '192.168.0.1';
-	const plexPort = localStorage.getItem('plex-settings-port') || '32400';
+	const plexIP = localStorage.getItem('plex-settings-ip') || '';
+	const plexPort = localStorage.getItem('plex-settings-port') || '27418';
 	const plexToken = localStorage.getItem('plex-settings-token') || '';
 
 	const plexSettingsToggle = document.querySelector('.plex-settings-toggle');
@@ -40,7 +40,7 @@ window.addEventListener('load', function() {
 
 
 	const plexURL = `http://${plexIP}:${plexPort}`;
-	const plexURLToken = `${plexURL}/status/sessions?X-Plex-Token=${plexToken}`;
+	const plexURLToken = `https://crossorigin.me/${plexURL}/status/sessions?X-Plex-Token=${plexToken}`;
 
 	function plexDisplay(data) {
 		console.log(data);
