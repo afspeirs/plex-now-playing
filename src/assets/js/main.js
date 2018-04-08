@@ -39,8 +39,8 @@ window.addEventListener('load', function() {
 	plexSettingsForm.addEventListener('submit', plexSettingsFormSubmit);
 
 
-	const plexURL = `http://${plexIP}:${plexPort}`;
-	const plexURLToken = `https://crossorigin.me/${plexURL}/status/sessions?X-Plex-Token=${plexToken}`;
+	const plexURL = `https://crossorigin.me/http://${plexIP}:${plexPort}`;
+	const plexURLToken = `${plexURL}/status/sessions?X-Plex-Token=${plexToken}`;
 
 	function plexDisplay(data) {
 		// console.log(data);
